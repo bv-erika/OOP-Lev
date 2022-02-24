@@ -18,13 +18,20 @@ public class AddressBook {
 		Scanner input = new Scanner(System.in);
 		
 		int size = readInt();
+		
+		//telefonkönyv adatszerkezet létrehozása
+		//kétdimenziós tömb : 
+		//olyan egydim. tömb, aminek minden sora egydim. tömb
 		String[][] myAddressBook = new String[size][];
 		
+		//telefonkönyv feltöltése
 		for(int i = 0; i < myAddressBook.length; i++) {
 			System.out.println("Name: ");
 			String name = input.nextLine();
 			System.out.println("Email addresses: ");
 			int numOfEmails = readInt();
+			//a telefonkönyv adatszerkezet minden sora tömb
+			//ezeket külön létre kell hozni
 			myAddressBook[i] = new String[numOfEmails+1];
 			myAddressBook[i][0] = name;
 			for(int j = 1; j <= numOfEmails; j++) {
@@ -59,6 +66,7 @@ public class AddressBook {
 		
 	}
 
+	//tömb kiírása
 	public static void printArray(String[][] array) {
 		for(int i = 0; i < array.length; i++) {
 			for(int j = 0; j < array[i].length; j++) {
@@ -68,6 +76,7 @@ public class AddressBook {
 		}
 	}
 	
+	//egész szám ellenőrzött beolvasása
 	public static int readInt() {
 		Scanner input = new Scanner(System.in);
 		int n;

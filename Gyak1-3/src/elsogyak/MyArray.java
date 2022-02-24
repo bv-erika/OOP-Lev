@@ -11,9 +11,12 @@ public class MyArray {
 		//System.out.println("Size of array: " + size);
 		int[] array = new int[size];
 		
+		//tömb feltöltése
 		fillArray(array);
+		//tömb kiírása
 		printArray(array);
 		
+		//legnagyobb páros szám keresése
 		if (findGreatestEven(array) < 0) {
 			System.out.println("Even not found");
 		}
@@ -24,10 +27,12 @@ public class MyArray {
 				findGreatestEven(array));
 		}
 		
+		//prímszámok kiválogatása
 		printArray(selectPrimes(array));
 		
 	}
 
+	//prímszámok kiválogatása
 	public static int[] selectPrimes(int[] array) {
 		int counter = 0;
 		for(int i = 0; i < array.length; i++) {
@@ -44,6 +49,7 @@ public class MyArray {
 		return selection;
 	}
 	
+	//prímvizsgálat
 	public static boolean checkPrime(int num) {
 		boolean prime = true;
 		for(int div = 2; div < Math.sqrt(num); div++) {
@@ -55,6 +61,7 @@ public class MyArray {
 		return prime;
 	}
 	
+	//legnagyobb páros szám keresése
 	public static int findGreatestEven(int[] array) {
 		int i;
 		for(i = 0; i < array.length; i++) {
@@ -75,6 +82,7 @@ public class MyArray {
 		return -1;
 	}
 	
+	//tömb feltöltése
 	public static void fillArray(int[] array) {
 		for(int i = 0; i < array.length; i++) {
 			//1 és 50 közötti véletlenszámok
@@ -82,6 +90,7 @@ public class MyArray {
 		}
 	}
 	
+	//tömb kiírása
 	public static void printArray(int[] array) {
 		/*
 		for(int i = 0; i < array.length; i++) {
@@ -93,6 +102,7 @@ public class MyArray {
 		System.out.println();
 	}
 	
+	//egész szám ellenőrzött beolvasása
 	public static int readInt() {
 		Scanner input = new Scanner(System.in);
 		int n;
